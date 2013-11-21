@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Bronixz</title>
-
+	<meta charset="utf-8">
 	<style type="text/css">
 		@import url(http://fonts.googleapis.com/css?family=Doppio+One);
 		@import url(http://fonts.googleapis.com/css?family=Six+Caps);
@@ -21,6 +21,7 @@
 			font-weight: 500;
 			background-color: black;
 			min-width: 1100px;
+			overflow: hidden;
 		}
 		.center{
 			position: absolute;
@@ -41,6 +42,7 @@
 			-webkit-filter: blur(30px);*/
 			bottom: 100px;
 			transition: 1s ease;
+			-moz-transition: 1s ease;
 		}
 		.pseudo{
 			position: absolute;
@@ -76,6 +78,7 @@
 			font-size: 20px;
 			text-decoration: none;	
 			transition: 0.3s;
+			-moz-transition: 0.3s;
 		}
 		.bouton:hover{
 			/*font-size: 25px;*/
@@ -86,19 +89,23 @@
 		}
 		.acceuil{
 			position: absolute;
+			top:0;
 			width: 100%;
 			height: 100%;
 			background: url(asset/tigre.jpg);
 			background-position: center;
 			background-size: cover;
 			transition: 0.7s ease;
+			-moz-transition: 0.7s ease;
 		}
 		.acceuil.off{
 			top:-80%;
 			transition: 0.7s ease-in;
+			-moz-transition: 0.7s ease-in;
 		}
 		.acceuil.off .menu{
 			transition: 1s ease-in;
+			-moz-transition: 1s ease-in;
 		}
 		/*CONTACT*/
 		.contact{
@@ -111,10 +118,12 @@
 			width: 60%;
 			height: 60%;
 			transition:1s ease 0.45s;
+			-moz-transition:1s ease 0.45s;
 		}
 		.contact.off{
 			right: -200%;
 			transition:1s ease;
+			-moz-transition:1s ease;
 		}
 		.contact.off .retour{
 			right: 10;
@@ -141,6 +150,7 @@
 			background-position: right;
 			margin-left: -20px;
 			box-sizing: border-box;
+			-moz-box-sizing: border-box;
 		}
 		.contact .contenu{
 			position: absolute;
@@ -183,7 +193,8 @@
 			height: 80%;
 			background: black;
 			border:2px solid white;
-			transition: 1s ease;
+			transition: 1s ease 0.45s;
+			-moz-transition: 1s ease 0.45s;
 			overflow: hidden;
 		}
 		.about.off{
@@ -191,6 +202,8 @@
 		}
 		.work.off{
 			left: -200%;
+			transition:1s ease;
+			-moz-transition:1s ease;
 		}
 		.retour{
 			position: absolute;
@@ -199,41 +212,37 @@
 			height: 80px;
 			background-color: rgba(0,0,0,0);
 			transition: 0.3s;
+			-moz-transition: 0.3s;
 			margin-top: -35px;
 			padding-top: 5px;
 			margin-left: 20px;
 		}
-		.retour:hover{
-			background-color: white;
-		}
-		.retour:hover:before,.retour:hover:after{
-			background-color: black;
-		}
-		.retour:before,.retour:after{
-			margin-top: 35px;
-			position:absolute;
-			content: "";
-			width: 40px;
-			height: 5px;
-			background: #FFF;
-			transition:0.3s;
-		}
-		.retour:before{
-			-webkit-transform: translateY(-250%) rotate(-45deg);
-			transform: translateY(-250%) rotate(45deg);
-		}
-		.retour:after{
-			-webkit-transform: translateY(250%) rotate(45deg);
-			transform: translateY(250%);
-		}
+	
 		.down{
 			bottom: -200%;
 			transition: .8s;
+			-moz-transition: .8s;
 		}
 		#owl-demo .item img{
 		    display: block;
 		    width: 100%;
 		    height: auto;
+		}
+		.arrow-right {
+			width: 0; 
+			height: 0; 
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+			
+			border-left: 10px solid white;
+			transition: 0.3s;
+			-moz-transition: 0.3s;
+		}
+		.arrow-right.off {
+			opacity: 0;
+		}
+		.controls img{
+			width: 80px;
 		}
 	</style>
 	<link rel="stylesheet" href="galery.css">	 
@@ -267,33 +276,49 @@
 <div class="about off">
 </div>
 <div class="work center off">
-	<div class="gallery items-3">
+	<div class="gallery items-4">
 	  <div id="item-1" class="control-operator"></div>
 	  <div id="item-2" class="control-operator"></div>
 	  <div id="item-3" class="control-operator"></div>
+  	  <div id="item-4" class="control-operator"></div>
 
 	  <figure class="item center">
-	    <video width="100%" height="100%">
-		  <source src="asset/video/teamwork.mp4" type="video/mp4" />
+	  	<div class="arrow-right center"></div>
+	    <video poster="asset/video/teamwork.png" width="100%" height="100%">
+		  <source  src="asset/video/teamwork.mp4"/>
+		  <source  src="asset/video/teamwork.webm"  />
 		</video>
 	  </figure>
 
 	  <figure class="item">
-	    <video width="100%" height="100%">
-		  <source src="asset/video/nfs.mp4" type="video/mp4" />
+  	  	<div class="arrow-right center"></div>
+	    <video poster="asset/video/nfs.png"  width="100%" height="100%">
+		  <source src="asset/video/nfs.mp4"  />
+		  <source src="asset/video/nfs.webm"  />
 		</video>
 	  </figure>
 
 	  <figure class="item">
-	    <video width="100%" height="100%">
-		  <source src="asset/video/deadisland.mp4" type="video/mp4" />
+  	  	<div class="arrow-right center"></div>
+	    <video poster="asset/video/deadisland.png" width="100%" height="100%">
+		  <source src="asset/video/deadisland.mp4" />
+		  <source src="asset/video/deadisland.webm"/>
+		</video>
+	  </figure>
+
+	  <figure class="item">
+  	  	<div class="arrow-right center"></div>
+	    <video poster="asset/video/machinarium.png" width="100%" height="100%">
+		  <source  src="asset/video/machinarium.mp4" />
+		  <source  src="asset/video/machinarium.webm"  />
 		</video>
 	  </figure>
 
 	  <div class="controls">
-	    <a href="#item-1" class="control-button">•</a>
-	    <a href="#item-2" class="control-button">•</a>
-	    <a href="#item-3" class="control-button">•</a>
+	    <a href="#item-1" class="control-button"><img src="asset/video/teamwork.png"></a>
+	    <a href="#item-2" class="control-button"><img src="asset/video/nfs.png"></a>
+	    <a href="#item-3" class="control-button"><img src="asset/video/deadisland.png"></a>
+	    <a href="#item-4" class="control-button"><img src="asset/video/machinarium.png"></a>
 	  </div>
 	</div>
 </div>
@@ -301,17 +326,21 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script src="owl-carousel/owl.carousel.js"></script>	
 <script type="text/javascript">
+
 	$('html').click(function(e){
 		if(e.target.paused == false){return false;};
 		$.each($('video'),function( index, value){
 			value.pause();
+			$(this).parent().find('.arrow-right').removeClass('off');
 		});
 	});
 	$('video').click(function(){
 		if(this.paused){
-			this.play();			
+			this.play();
+			$(this).parent().find('.arrow-right').addClass('off');
 		}else{
 			this.pause();			
+			$(this).parent().find('.arrow-right').removeClass('off');
 		}
 	});
 
